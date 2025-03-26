@@ -18,7 +18,7 @@ public class AppConfig {
     public WebClient webClientPaymentService(WebClient.Builder webClientBuilder) {
 
         return webClientBuilder
-                .baseUrl("http://localhost:8094/payment/create")
+                .baseUrl("http://localhost:8094/payment/")
                 .build();
     }
 
@@ -26,7 +26,15 @@ public class AppConfig {
     public WebClient webClientOrderService(WebClient.Builder webClientBuilder) {
 
         return webClientBuilder
-                .baseUrl("http://localhost:8094/order/create")
+                .baseUrl("http://localhost:8093/order/")
+                .build();
+    }
+
+    @Bean(name = "product-service")
+    public WebClient webClientProductService(WebClient.Builder webClientBuilder) {
+
+        return webClientBuilder
+                .baseUrl("http://localhost:8095/product/")
                 .build();
     }
 }
